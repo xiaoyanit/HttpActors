@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:a="http://schemas.android.com/apk/res/android"
+	package="com.novoda.lib.httpservice" a:versionCode="1" a:versionName="1.0">
+	<application a:theme="@style/NovodaTheme">
+		<uses-library a:name="android.test.runner" />
+
+		<activity a:name=".example.PausableFileDownload">
+			<intent-filter>
+				<action a:name="android.intent.action.MAIN" />
+				<category a:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+
+		<service a:name="com.novoda.lib.httpservice.HttpService">
+			<meta-data a:name="com.novoda.lib.httpservice" a:value="xmlactor" />
+		</service>
+
+		<service
+			a:name="com.novoda.lib.httpservice.example.auth.AuthenticationService"
+			a:exported="true">
+			<intent-filter>
+				<action a:name="android.accounts.AccountAuthenticator" />
+			</intent-filter>
+			<meta-data a:name="android.accounts.AccountAuthenticator"
+				a:resource="@xml/authenticator" />
+		</service>
+
+	</application>
+
+	<instrumentation a:name="android.test.InstrumentationTestRunner"
+		a:targetPackage="com.novoda.lib.httpservice" a:label="Tests for com.novoda.lib.httpservice" />
+
+	<uses-permission a:name="android.permission.INTERNET" />
+	<uses-permission a:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission a:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission a:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission a:name="android.permission.USE_CREDENTIALS" />
+	<uses-permission a:name="android.permission.MANAGE_ACCOUNTS" />
+	<uses-permission a:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+</manifest>
