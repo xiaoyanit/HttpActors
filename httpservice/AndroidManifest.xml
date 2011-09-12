@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest a:versionCode="1" a:versionName="1.0"
-	package="com.novoda.lib.httpservice" xmlns:a="http://schemas.android.com/apk/res/android">
-	<application>
-		<!-- I need to keep this for rebolectric test -->
-		<service a:name="com.novoda.lib.httpservice.HttpService"
-			a:permission="android.permission.ACCESS_NETWORK_STATE" />
-	</application>
-</manifest>

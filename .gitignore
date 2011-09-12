@@ -22,4 +22,5 @@ httpservice/tmp
 .ap_
 bin
 res
+.settings
 

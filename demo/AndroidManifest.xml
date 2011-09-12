@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+   xmlns:a="http://schemas.android.com/apk/res/android"
+   package="com.novoda.lib.httpservice"
+   a:name=".tester.HttpServiceTester"
+   a:versionCode="1"
+   a:versionName="1.0">
+   <uses-permission
+      a:name="android.permission.INTERNET" />
+   <uses-permission
+      a:name="android.permission.ACCESS_NETWORK_STATE" />
+   <uses-permission 
+      a:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+   
+   <uses-sdk
+      a:minSdkVersion="7" />
+   <application
+      a:label="@string/app_name"
+      a:name=".tester.HttpServiceTester"
+      a:theme="@android:style/Theme.NoTitleBar">
+      <activity
+         a:screenOrientation="portrait"
+         a:name=".tester.activity.Tester">
+      </activity>
+      <activity
+         a:screenOrientation="portrait"
+         a:name=".tester.activity.Downloader">
+         <intent-filter>
+            <action
+               a:name="android.intent.action.MAIN" />
+            <category
+               a:name="android.intent.category.DEFAULT" />
+            <category
+               a:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+      </activity>
+      <activity
+         a:name=".tester.activity.SimpleHttpCallActivity">
+         <intent-filter>
+            <action
+               a:name="android.intent.action.MAIN" />
+            <category
+               a:name="android.intent.category.DEFAULT" />
+         </intent-filter>
+      </activity>
+      <service
+         a:name=".tester.service.AppService">
+         <intent-filter>
+            <action
+               a:name="android.intent.action.SYNC" />
+            <category
+               a:name="android.intent.category.DEFAULT" />
+            <data
+               a:scheme="http"
+               a:host="httpmock.appspot.com"
+               a:mimeType="vnd.android.cursor.dir/vnd.httptester.actor1" />
+         </intent-filter>
+         <intent-filter>
+            <action
+               a:name="android.intent.action.SYNC" />
+            <category
+               a:name="android.intent.category.DEFAULT" />
+            <data
+               a:scheme="http"
+               a:host="httpmock.appspot.com"
+               a:mimeType="vnd.android.cursor.dir/vnd.httptester.actor2" />
+         </intent-filter>
+         <intent-filter>
+            <action
+               a:name="android.intent.action.SYNC" />
+            <category
+               a:name="android.intent.category.DEFAULT" />
+            <data
+               a:scheme="http"
+               a:host="httpmock.appspot.com"
+               a:mimeType="vnd.android.cursor.dir/vnd.httptester.zip" />
+         </intent-filter>
+         <!--
+            <meta-data a:name="actorXmlFile" a:value="actors.xml"/>
+         -->
+         </service>
+
+		<activity a:name=".tester.activity.SimpleHttpCallActivity">
+			<intent-filter>
+				<action a:name="android.intent.action.MAIN" />
+				<category a:name="android.intent.category.DEFAULT" />
+				<category a:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<!-- 
+		=====================================================
+		Services
+		=====================================================
+		-->
+		<service a:name=".HttpService">
+			<intent-filter>
+				<action a:name="android.intent.action.SYNC" />
+				<category a:name="android.intent.category.DEFAULT" />
+				<data a:scheme="http" a:host="httpmock.appspot.com" />
+				<data a:mimeType="vnd.android.cursor.dir/vnd.httptester.actor1" />
+			</intent-filter>
+			<intent-filter>
+				<action a:name="android.intent.action.SYNC" />
+				<category a:name="android.intent.category.DEFAULT" />
+				<data a:scheme="http" a:host="httpmock.appspot.com" />
+				<data a:mimeType="vnd.android.cursor.dir/vnd.httptester.actor2" />
+			</intent-filter>
+		</service>
+		
+
+		<service a:name="com.novoda.lib.httpservice.HttpService">
+			<intent-filter>
+				<action a:name="GET" />
+				<data a:scheme="http" a:host="httpmock.appspot.com" a:path="test/simplejson" />
+			</intent-filter>
+		</service>
+      <provider
+         a:name="com.novoda.lib.httpservice.storage.provider.StorageProvider"
+         a:authorities="com.novoda.lib.httpservice" />
+   </application>
+</manifest>
