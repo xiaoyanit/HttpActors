@@ -71,8 +71,8 @@
 
   <modules>
     <module>core</module>
-    <!-- 
     <module>demo</module>
+    <!-- 
     <module>acceptance</module> 
     -->
   </modules>
