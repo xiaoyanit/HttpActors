@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+   xmlns:a="http://schemas.android.com/apk/res/android"
+   style="@style/Fill_parent"
+   a:orientation="vertical"
+   a:background="#fff">
+   <TextView
+      a:text="HttpService tester"
+      style="@style/Fill_horizontally"
+      a:textColor="#FFFFFF"
+      a:textSize="20dp"
+      a:textStyle="bold"
+      a:layout_gravity="center_horizontal"
+      a:background="#4876FF"
+      a:padding="6dp" />
+   <LinearLayout
+      style="@style/Fill_horizontally"
+      a:padding="6dp"
+      a:gravity="center">
+      <EditText
+         a:id="@+id/requestNumber"
+         a:minWidth="100dip"
+         style="@style/Wrap_content"
+         a:hint="1 call, or type to change" 
+         />
+      <Button
+         a:id="@+id/start"
+         a:text="Start"
+         style="@style/Wrap_content"
+         a:layout_marginLeft="5dp"
+         a:minWidth="75dp" 
+        />
+   </LinearLayout>
+   <LinearLayout
+      style="@style/Fill_horizontally"
+      a:orientation="vertical"
+      a:padding="6dp">
+      <TextView
+         a:text="@string/default_http_method"
+         style="@style/Fill_horizontally" />
+      <Spinner 
+        a:id="@+id/http_method"
+        style="@style/Fill_horizontally"
+        a:prompt="@string/default_http_method"
+      />
+   </LinearLayout>
+   <LinearLayout
+      style="@style/Fill_horizontally"
+      a:orientation="vertical"
+      a:padding="6dp">
+      <TextView
+         a:text="@string/default_http_response_type"
+         style="@style/Fill_horizontally" />
+      <Spinner 
+        a:id="@+id/http_respose_types"
+        style="@style/Fill_horizontally"
+        a:prompt="@string/default_http_response_type"
+      />
+         
+   </LinearLayout>
+</LinearLayout>

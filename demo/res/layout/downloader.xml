@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+   xmlns:a="http://schemas.android.com/apk/res/android"
+   style="@style/Fill_parent"
+   a:orientation="vertical"
+   a:background="#fff">
+   <TextView
+      a:text="HttpService tester"
+      style="@style/Fill_horizontally"
+      a:textColor="#FFFFFF"
+      a:textSize="20dp"
+      a:textStyle="bold"
+      a:layout_gravity="center_horizontal"
+      a:background="#4876FF"
+      a:padding="6dp" />
+   <LinearLayout
+      style="@style/Fill_horizontally"
+      a:orientation="vertical"
+      a:padding="6dp">
+      <Button
+        a:id="@+id/download"
+        style="@style/Fill_horizontally"
+        a:text="download" />
+      <Button
+        a:id="@+id/delete"
+        style="@style/Fill_horizontally"
+        a:text="delete" />
+      <TextView
+        a:id="@+id/progress"
+        style="@style/Fill_horizontally"
+        a:text="progress not started" />
+   </LinearLayout>
+</LinearLayout>

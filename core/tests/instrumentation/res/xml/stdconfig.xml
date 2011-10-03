@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<HttpService xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:hs="http://schemas.android.com/apk/res/com.novoda.lib.httpservice"
+	hs:name="TESET hi" android:name="TESTE">
+	
+	<Processor
+		hs:name="com.novoda.lib.httpservice.processor.BasicOAuthProcessor">
+	</Processor>
+
+	<Actor android:name="com.novoda.lib.httpservice.actor.LoggingActor">
+		<intent-filter>
+			<action name="GET" />
+			<scheme name="http" />
+			<auth host="www.example.com" />
+		</intent-filter>
+	</Actor>
+	
+	<Actor android:name="com.novoda.lib.httpservice.actor.SimpleActor1">
+		<intent-filter>
+			<action name="GET" />
+			<scheme name="http" />
+			<auth host="www.another.com" />
+			<path name="jsonpath" literal="/path/1" />
+		</intent-filter>
+	</Actor>
+</HttpService>

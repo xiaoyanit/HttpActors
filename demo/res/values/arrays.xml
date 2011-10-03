@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="default_http_method">Request Method</string>
+   <string-array
+      name="http_methods">
+      <item>get</item>
+      <item>post</item>
+   </string-array>
+   <string name="default_http_response_type">Response type</string>
+   <string-array
+      name="http_response_types">
+      <item>404</item>
+      <item>500</item>
+      <item>external res</item>
+      <item>string res</item>
+   </string-array>
+</resources>

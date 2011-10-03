@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- 
+	=================================================================
+	Errors
+	=================================================================
+	 -->
+	<string name="error_1">Problem trying to parse the schema from the json coming from the server : %1$s</string>
+	 
+</resources>

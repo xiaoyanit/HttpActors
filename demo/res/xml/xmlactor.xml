@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<actor xmlns:android="http://schemas.android.com/apk/res/android"
+	android:name="com.novoda.lib.httpservice.tester.actor.JsonActor">
+	
+	<intent-filter>
+		<action name="GET" />
+		<scheme name="http" />
+		<auth host="httpmock.appspot.com" />
+		<path name="jsonpath" literal="/test/simplejson"/>
+	</intent-filter>
+	
+</actor>

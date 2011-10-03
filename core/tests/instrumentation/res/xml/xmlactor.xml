@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<HttpService xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:hs="http://schemas.android.com/apk/res/com.novoda.lib.httpservice">
+
+	<Processor hs:name="com.novoda.lib.httpservice.processor.LoggableProcessor" />
+
+	<Processor hs:name="com.novoda.lib.httpservice.processor.BasicOAuthProcessor"
+		android:accountType="novoda.test.httpservice" />
+
+	<Actor android:name="com.novoda.lib.httpservice.actor.LoggingActor">
+		<intent-filter>
+			<action name="GET" />
+			<scheme name="http" />
+			<auth host="www.example.com" />
+		</intent-filter>
+	</Actor>
+
+	<Actor android:name="com.novoda.lib.httpservice.actor.SimpleActor1">
+		<intent-filter>
+			<action name="GET" />
+			<scheme name="http" />
+			<auth host="www.another.com" />
+			<path name="jsonpath" literal="/path/1" />
+		</intent-filter>
+	</Actor>
+
+	<Actor android:name="com.novoda.lib.httpservice.actor.SimpleActor1">
+		<intent-filter>
+			<action name="GET" />
+			<scheme name="http" />
+			<auth host="api.twitter.com" />
+			<path name="trends" literal="/1/trends.json" />
+		</intent-filter>
+	</Actor>
+	
+	<Actor android:name="com.novoda.lib.httpservice.actor.DownloadActor">
+		<intent-filter>
+			<action name="GET" />
+			<scheme name="http" />
+			<auth host="dl.dropbox.com" />
+			<path name="trends" literal="/u/615212/novoda-HttpService-0.1.0-0-g6e51d8b.zip" />
+		</intent-filter>
+	</Actor>
+</HttpService>
