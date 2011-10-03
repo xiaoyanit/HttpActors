@@ -12,9 +12,11 @@
   <packaging>apklib</packaging>
 
   <dependencies>
-    <!-- <dependency> <groupId>org.apache.httpcomponents</groupId> <artifactId>httpmime</artifactId> 
+    <!-- 
+      <dependency> <groupId>org.apache.httpcomponents</groupId> <artifactId>httpmime</artifactId> 
       <version>4.0.3</version> </dependency> <dependency> <groupId>org.apache.james</groupId> 
-      <artifactId>apache-mime4j</artifactId> <version>0.6.1</version> </dependency> -->
+      <artifactId>apache-mime4j</artifactId> <version>0.6.1</version> </dependency> 
+    -->
     <dependency>
       <groupId>oauth.signpost</groupId>
       <artifactId>signpost-commonshttp4</artifactId>
