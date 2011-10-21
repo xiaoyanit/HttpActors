@@ -23,4 +23,6 @@ httpservice/tmp
 .ap_
 bin
 .settings
+**/project.properties
+**/libs/*
 
