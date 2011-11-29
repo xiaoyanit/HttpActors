@@ -22,5 +22,5 @@ public interface Settings {
 	long SERVICE_LIFECYCLE = SECOND * 30;
 	long KEEP_ALIFE_TIME = SECOND * 60 * 1;
 
-	boolean FOLLOW_REDIRECT = false;
+	boolean FOLLOW_REDIRECT = true;
 }
