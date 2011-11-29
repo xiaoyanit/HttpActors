@@ -129,7 +129,7 @@ public final class AndroidHttpClient implements HttpClient {
 
         // Don't handle redirects -- return them to the caller. Our code
         // often wants to re-POST after a redirect, which we must do ourselves.
-        HttpClientParams.setRedirecting(params, false);
+        HttpClientParams.setRedirecting(params, Settings.FOLLOW_REDIRECT);
 
         // Use a session cache for SSL sockets
         // Commented out because is not used
