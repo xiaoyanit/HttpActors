@@ -80,6 +80,7 @@ public class FileActor extends Actor implements ResumableActor {
 
     @Override
     public void onResponseReceived(HttpResponse httpResponse) {
+    	OutputStream out = null;
         if (Log.infoLoggingEnabled()) {
             Log.i("Downloading " + getIntent().getDataString() + " to "
                     + getIntent().getStringExtra(DOWNLOAD_DIRECTORY_PATH_EXTRA));
@@ -89,7 +90,8 @@ public class FileActor extends Actor implements ResumableActor {
                 registerForCancel();
                 this.response = httpResponse;
             }
-            httpResponse.getEntity().writeTo(getOutputStream());
+            out = getOutputStream();
+            httpResponse.getEntity().writeTo(out);
             broadcastFinishedDownload();
         } catch (FileNotFoundException e) {
             broadcastDownloadFailed(e, -1);
@@ -102,6 +104,14 @@ public class FileActor extends Actor implements ResumableActor {
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             Log.e("Got a cancel?" + e);
+        } finally {
+        	if (out!=null){
+        		try {
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        	}
         }
         super.onResponseReceived(httpResponse);
     }
@@ -136,12 +146,13 @@ public class FileActor extends Actor implements ResumableActor {
         getHttpContext().sendBroadcast(intent);
     }
 
-    private OutputStream getOutputStream() throws FileNotFoundException {
+   private OutputStream getOutputStream() throws FileNotFoundException {
         if (getIntent().hasExtra(WRITE_TO)) {
             Uri writeTo = getIntent().getParcelableExtra(WRITE_TO);
             return getHttpContext().getContentResolver().openOutputStream(writeTo);
         }
-        return new FileOutputStream(getFile());
+        OutputStream stream = new FileOutputStream(getFile());
+        return stream;
     }
 
     private void broadcastFinishedDownload() {
